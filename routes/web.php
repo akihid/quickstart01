@@ -45,5 +45,8 @@ Route::post('/task', function(Request $request){
 
 // タスク削除
 Route::delete('/task/{task}', function(Task $task){
-    //{task}という処理で消すタスクを特定しfunction(Task $task)に送る
+		//{task}という処理で消すタスクを特定しfunction(Task $task)に送る
+		$task->delete();
+
+		return redirect('/');
 });
