@@ -32,6 +32,35 @@
         </div>
       </div>  
       <!-- TODO: Current Tasks -->
+      @if (count($tasks) > 0)
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            現在のタスク
+          </div>
+
+          <div class="panel-body">
+            <table class="table table-striped task-table">
+              <!-- ヘッダー -->
+              <thead>
+                <th>タスク</th>
+                <th>&nbsp;</th>
+              </thead>
+              <!-- 本体 -->
+              <tbody>
+                @foreach ($tasks as $task)
+                  <tr>
+                    <td class="table-text">
+                      <div>{{$task->name}}</div>
+                    </td>
+                    <td></td>
+                    <!-- Todo 削除 -->
+                  </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      @endif
     </div>
   </div>
 @endsection
